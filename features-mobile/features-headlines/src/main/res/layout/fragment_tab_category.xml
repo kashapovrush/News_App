@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.TabCategoryFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/category_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/background_splash_screen"
+        app:tabIndicatorFullWidth="false"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="General"
+            android:layout_gravity="center"
+            android:layout="@layout/general_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Business"
+            android:layout_gravity="center"
+            android:layout="@layout/business_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Entertaiment"
+            android:layout="@layout/enterteiment_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Health"
+            android:layout="@layout/health_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Science"
+            android:layout="@layout/science_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Sports"
+            android:layout="@layout/sports_category_tab"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="113dp"
+            android:layout_height="64dp"
+            android:text="Technology"
+            android:layout="@layout/technology_category_tab"
+            />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:id="@+id/divider_under_category_rv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_grey"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/container_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context = ".HeadlinesFragment"
+        />
+
+
+
+
+</LinearLayout>

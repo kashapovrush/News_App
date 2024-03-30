@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NewsAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/background_splash_screen</item>
+        <item name="android:navigationBarColor">@color/background_splash_screen</item>
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.NewsAPP" parent="Base.Theme.NewsAPP" />
+
+
+<!--    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+<!--        <item name="colorPrimary">@color/background_splash_screen</item>-->
+<!--        <item name="colorSurface">#F8F9FB</item>-->
+<!--    </style>-->
+
+</resources>

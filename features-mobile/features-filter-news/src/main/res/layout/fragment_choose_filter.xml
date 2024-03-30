@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ChooseFilterFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:id="@+id/layout_popular_filter"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/background_segments_left_button_disabled"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_popular_filter"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_black"
+                    android:visibility="gone"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="@string/popular_filter"
+                    android:textColor="@color/text_color_primary"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_new_filter"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/background_segments_center_button_disabled"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_new_filter"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_check_black"
+                    android:visibility="gone"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="@string/new_filter"
+                    android:textColor="@color/text_color_primary"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_relevant_filter"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/background_segments_right_button_disabled"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_relevant_filter"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_check_black"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="@string/relevant_filter"
+                    android:textColor="@color/text_color_primary"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/text_color_primary"
+                android:textSize="11sp"
+                />
+
+            <TextView
+                android:id="@+id/text_show_period"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:hint="Choose date"
+                android:text=""
+                android:textColor="@color/primary"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+            <ImageView
+                android:id="@+id/btn_choose_date"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/icon_calendar"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textSize="11sp"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/text_color_primary"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/language_russian"
+                    android:layout_width="79dp"
+                    android:layout_height="32dp"
+                    android:text="Русский"
+                    android:gravity="center"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="11sp"
+                    android:layout_marginEnd="8dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/background_select_language_disabled"
+                    />
+
+                <TextView
+                    android:id="@+id/language_english"
+                    android:layout_width="79dp"
+                    android:layout_height="32dp"
+                    android:text="English"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/text_color_primary"
+                    android:textAllCaps="false"
+                    android:background="@drawable/background_select_language_disabled"
+                    />
+
+                <TextView
+                    android:id="@+id/language_deutsch"
+                    android:layout_width="79dp"
+                    android:layout_height="32dp"
+                    android:text="Deutsch"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_color_primary"
+                    android:background="@drawable/background_select_language_disabled"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_splash_screen">#009EBD</color>
+    <color name="white">#FBFCFE</color>
+    <color name="background_enabled_icon">#00829C</color>
+    <color name="text_color_disabled_tabs">#40484B</color>
+    <color name="dark_grey">#AAAAAA</color>
+    <color name="text_color_primary">#191C1D</color>
+    <color name="primary">#00677C</color>
+    <color name="background_button_filter">#70787C</color>
+    <color name="background_filter_enabled">#CEE7F0</color>
+    <color name="background_data_picker">#1C1B1F29</color>
+    <color name="background_between_enabled_days">#CEE7F0</color>
+    <color name="red">#BA1A1A</color>
+</resources>

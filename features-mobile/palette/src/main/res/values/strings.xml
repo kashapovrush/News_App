@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">News APP</string>
+<!--    <string name="api_key">5e9ef018060345fc864ba15895a7956f</string>-->
+    <string name="api_key">6e56239f10864bf189382ae97b6093dd</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tittle_headlines">Headlines</string>
+    <string name="general_category">General</string>
+    <string name="source_name">CNN</string>
+    <string name="content_post_news">First Republic stocks drops nearly 50% after plunge in deposits</string>
+    <string name="title_activity_headlines_list">HeadlinesList</string>
+</resources>

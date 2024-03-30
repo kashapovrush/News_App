@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NewsPostFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="273dp"
+            app:contentScrim="@color/background_splash_screen"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/image_content"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                android:src="@drawable/thumbnail" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                app:layout_collapseMode="pin"
+                android:layout_marginTop="32dp"
+                android:fitsSystemWindows="false"
+                app:titleTextColor="@color/white"
+                >
+
+                <LinearLayout
+                    android:id="@+id/layout_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/btn_back"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_back_button"
+                        />
+
+                    <TextView
+                        android:id="@+id/title_in_collapsing_tolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:textSize="22sp"
+                        android:text="Headlines"
+                        android:textColor="@color/white"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/btn_add_to_favourite"
+                        android:padding="10dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_bookmark_border"
+                        />
+
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <FrameLayout
+                android:id="@+id/layout_under_collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:orientation="vertical"
+                android:background="#F8F9FB"
+                android:padding="4dp"
+                android:layout_marginTop="160dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:id="@+id/title_under_collapsing"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:lines="2"
+                        android:textColor="@color/text_color_primary"
+                        android:text="How Queen Elizabeth’s coronation helped start Matchbox cars"
+                        />
+
+                    <TextView
+                        android:id="@+id/time_tv"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:padding="2dp"
+                        android:textColor="@color/text_color_disabled_tabs"
+                        android:text="Mar 20, 2023 | 10:57 AM"
+                        />
+
+                    <TextView
+                        android:id="@+id/sources_tv"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:text="BBC"
+                        android:textSize="14sp"
+                        android:padding="2dp"
+                        android:layout_gravity="center"
+                        />
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center_horizontal"
+           >
+           <TextView
+               android:id="@+id/content_news_text"
+               android:layout_width="328dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal"
+               android:text="@string/text"
+               android:textSize="16sp" />
+       </FrameLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

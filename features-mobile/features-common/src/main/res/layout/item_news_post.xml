@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="89dp">
+
+    <ImageView
+        android:id="@+id/content_image"
+        android:layout_width="114dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="206dp"
+        android:layout_height="64dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/content_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/content_image"
+        app:layout_constraintTop_toTopOf="@+id/content_image" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            >
+
+            <ImageView
+                android:id="@+id/content_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+
+            <TextView
+                android:id="@+id/content_source_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/source_name"
+                android:padding="4dp"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/text_color_primary"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/content_post_news"
+            />
+        
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_grey"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+        
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

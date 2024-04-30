@@ -6,21 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.features_common.adapter.HeadlinesAdapter
-import com.example.features_common.adapter.SourcesAdapter
+import com.example.features_common.adapter.headlines.SourcesAdapter
 import com.example.features_common.constans.Constants.CURRENT_STATE
-import com.example.features_common.constans.Constants.EXTRA_FAVOURITE_STATE
 import com.example.features_common.constans.Constants.EXTRA_SOURCE_STATE
 import com.example.features_common.constans.Constants.NAVIGATION_STATE
 import com.example.features_common.viewmodel.SourcesViewModel
-import com.example.features_source.R
 import com.example.features_source.databinding.FragmentSourcesBinding
 import com.example.features_source.di.SourceComponentProvider
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -109,7 +106,7 @@ class SourcesFragment : Fragment() {
 
         fun clickListenerToSearch()
 
-        fun clickListenerToNewsPost(post: NewsHeadlines)
+        fun clickListenerToNewsPost(post: NewsHeadlines?)
     }
 
     companion object {

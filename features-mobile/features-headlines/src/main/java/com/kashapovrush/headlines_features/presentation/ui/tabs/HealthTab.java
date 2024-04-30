@@ -8,12 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.database.dao.NewsHeadlinesDao;
-import com.example.features_common.adapter.HeadlinesAdapter;
-import com.example.features_common.mapper.NewsHeadlinesMapper;
+import com.example.features_common.adapter.headlines.HeadlinesAdapter;
 import com.example.features_common.presenter.HeadlinesPresenter;
 import com.example.features_common.presenter.HeadlinesView;
 import com.kashapovrush.api.modelsDto.NewsHeadlines;
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto;
 import com.kashapovrush.api.network.ApiService;
 import com.kashapovrush.headlines_features.databinding.FragmentGeneralTabBinding;
 import com.kashapovrush.headlines_features.di.HeadlinesComponentProvider;

@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.database.dao.NewsHeadlinesDao
 import com.example.database.dbModel.NewsHeadlinesDb
 
-@Database(entities = [NewsHeadlinesDb::class], version = 2)
+@Database(entities = [NewsHeadlinesDb::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun newsHeadlinesDao(): NewsHeadlinesDao

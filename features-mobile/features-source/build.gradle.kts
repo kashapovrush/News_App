@@ -42,7 +42,7 @@ dependencies {
     implementation(project(":features-mobile:palette"))
     implementation(project(":features-mobile:features-common"))
     implementation(project(":core:utils"))
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
 
 
     implementation(libs.androidx.core.ktx)
@@ -55,4 +55,6 @@ dependencies {
     //Dagger2
     implementation (libs.dagger.core)
     ksp (libs.dagger.compiler)
+
+    implementation(libs.jetpack.paging.common)
 }

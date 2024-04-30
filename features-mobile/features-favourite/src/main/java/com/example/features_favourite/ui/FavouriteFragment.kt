@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.features_common.adapter.HeadlinesAdapter
+import com.example.features_common.adapter.headlines.HeadlinesAdapter
 import com.example.features_common.constans.Constants.CURRENT_STATE
 import com.example.features_common.constans.Constants.EXTRA_FAVOURITE_STATE
 import com.example.features_common.constans.Constants.NAVIGATION_STATE
@@ -17,6 +17,7 @@ import com.example.features_common.viewmodel.FavouriteViewModel
 import com.example.features_favourite.databinding.FragmentFavouriteBinding
 import com.example.features_favourite.di.FavouriteComponentProvider
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import javax.inject.Inject
 
@@ -77,7 +78,7 @@ class FavouriteFragment : Fragment() {
 
     interface ClickListenerFromFavourite {
 
-        fun clickListenerToNewsPost(post: NewsHeadlines)
+        fun clickListenerToNewsPost(post: NewsHeadlines?)
 
         fun clickListenerToSearch()
 

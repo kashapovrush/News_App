@@ -43,7 +43,7 @@ dependencies {
     implementation(project(":features-mobile:features-common"))
     implementation(project(":features-mobile:palette"))
     implementation(project(":core:utils"))
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
     implementation(project(":core:database"))
 
     implementation(libs.androidx.core.ktx)

@@ -1,10 +1,12 @@
 package com.example.features_filter_news.ui
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -39,6 +41,7 @@ class CalendarFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -152,16 +155,19 @@ class CalendarFragment : Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun setMonth() {
         binding.monthYearTv.text = monthYearFromDate(localDate)
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun monthYearFromDate(date: LocalDate): String {
         val formatter = DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH)
         return date.format(formatter)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun monthWithDayFromDate(date: LocalDate): String {
         val formatter = DateTimeFormatter.ofPattern("MMM dd", Locale.ENGLISH)
         return date.format(formatter)

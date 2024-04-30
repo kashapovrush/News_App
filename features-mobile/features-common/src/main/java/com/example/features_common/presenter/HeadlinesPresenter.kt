@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.database.dao.NewsHeadlinesDao
 import com.example.database.dbModel.NewsHeadlinesDb
 import com.example.features_common.mapper.NewsHeadlinesMapper
+import com.kashapovrush.api.modelsDto.toNewsHeadlinesListEntity
 import com.kashapovrush.api.network.ApiService
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
@@ -30,7 +31,7 @@ class HeadlinesPresenter @Inject constructor(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    viewState.showResult(it.articles)
+                    viewState.showResult(it.articles.toNewsHeadlinesListEntity())
                 }, {
                     viewState.showError(it.message ?: "")
                 })
@@ -42,7 +43,7 @@ class HeadlinesPresenter @Inject constructor(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                viewState.showResult(it.articles)
+                viewState.showResult(it.articles.toNewsHeadlinesListEntity())
             }, {
                 viewState.showError(it.message ?: "")
             })

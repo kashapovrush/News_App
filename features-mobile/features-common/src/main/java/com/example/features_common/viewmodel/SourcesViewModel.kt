@@ -3,16 +3,10 @@ package com.example.features_common.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
-import com.kashapovrush.api.modelsDto.NewsHeadlines
 import com.kashapovrush.api.modelsDto.Source
-import com.kashapovrush.api.modelsDto.Sources
 import com.kashapovrush.api.network.ApiService
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SourcesViewModel @Inject constructor(private val apiService: ApiService) : ViewModel() {

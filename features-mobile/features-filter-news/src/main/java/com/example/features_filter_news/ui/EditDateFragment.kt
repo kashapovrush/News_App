@@ -1,9 +1,11 @@
 package com.example.features_filter_news.ui
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
@@ -36,6 +38,7 @@ class EditDateFragment : Fragment(), CalendarAdapter.OnItemClickListener {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -68,6 +71,7 @@ class EditDateFragment : Fragment(), CalendarAdapter.OnItemClickListener {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun setMonth(list: ArrayList<Day>) {
         calendarAdapter =
             CalendarAdapter(list, requireContext(), this)
@@ -88,6 +92,7 @@ class EditDateFragment : Fragment(), CalendarAdapter.OnItemClickListener {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun daysInMonthList(date: LocalDate?): ArrayList<Day> {
         val daysInMonthArray = ArrayList<Day>()
         val yearMonth = YearMonth.from(date)
@@ -121,6 +126,7 @@ class EditDateFragment : Fragment(), CalendarAdapter.OnItemClickListener {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun monthWithDayFromDate(date: LocalDate): String {
         val formatter = DateTimeFormatter.ofPattern("MMM dd", Locale.ENGLISH)
         return date.format(formatter)
@@ -137,6 +143,7 @@ class EditDateFragment : Fragment(), CalendarAdapter.OnItemClickListener {
         fun newInstance() = EditDateFragment()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun selectedItem(day: Day) {
         currentDaysList.clear()
         val dayEnabled = Day(day.value, isEnabled = Day.ENABLED)

@@ -1,12 +1,14 @@
 package com.example.features_filter_news.ui
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResultListener
@@ -55,6 +57,7 @@ class FilterNewsFragment : Fragment(),
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -148,6 +151,7 @@ class FilterNewsFragment : Fragment(),
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun monthWithDayWithYearFromDate(date: LocalDate): String {
         val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH)
         return date.format(formatter)

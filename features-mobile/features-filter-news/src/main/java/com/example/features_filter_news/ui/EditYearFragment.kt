@@ -67,6 +67,7 @@ class EditYearFragment : Fragment() {
         yearChooseAdapter =
             YearChooseAdapter(newList, object : YearChooseAdapter.OnItemClickListener {
 
+                @RequiresApi(Build.VERSION_CODES.O)
                 override fun setEnabledState(position: Int, year: Year) {
                     newList.clear()
                     newList.addAll(fixList)

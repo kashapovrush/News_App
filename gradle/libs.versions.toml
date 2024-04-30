@@ -1,7 +1,7 @@
 [versions]
-agp = "8.2.0"
+agp = "8.2.2"
 kotlin = "1.9.21"
-coreKtx = "1.12.0"
+coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -11,7 +11,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 fragment = "1.6.2"
 glide = "4.16.0"
-retrofit = "2.11.0"
+retrofit = "2.9.0"
 gson = "2.10.1"
 dagger = "2.48.1"
 ksp = "1.9.22-1.0.16"
@@ -25,6 +25,7 @@ room = "2.6.1"
 lottie = "3.4.0"
 swipeRefresh = "1.1.0"
 moxy = "2.2.2"
+annotation = "1.7.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,7 +47,7 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 # Retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
-google-gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 # Dagger
 dagger-core = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
@@ -62,37 +63,40 @@ coroutine-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-c
 # Lifecycle
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecicle" }
 lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecicle" }
-lifecycle-livedata-ktx = {group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecicle"}
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecicle" }
 
 
 # Jetpack Paging 3
 jetpack-paging-common = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
 
 # Rx Java 3
-rxjava-core = {group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava"}
-rxjava-android = {group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxJavaAndroid"}
-rxjava-adapter = {group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofit"}
+rxjava-core = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava" }
+rxjava-android = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxJavaAndroid" }
+rxjava-adapter = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofit" }
 
 # Room
-room-core = {group = "androidx.room", name = "room-ktx", version.ref = "room"}
-room-runtime = {group = "androidx.room", name = "room-runtime", version.ref = "room"}
-room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "room"}
-room-rxjava = {group = "androidx.room", name = "room-rxjava3", version.ref = "room"}
+room-core = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-rxjava = { group = "androidx.room", name = "room-rxjava3", version.ref = "room" }
 
 # Lottie
-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 
 # Swipe refresh layout
-swipe-refresh-layout = {group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefresh"}
+swipe-refresh-layout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefresh" }
 
 # Moxy
-moxy-core = {group = "com.github.moxy-community", name = "moxy", version.ref = "moxy"}
-moxy-complier = {group = "com.github.moxy-community", name = "moxy-compiler", version.ref = "moxy"}
-moxy-android = {group = "com.github.moxy-community", name = "moxy-androidx", version.ref = "moxy"}
+moxy-core = { group = "com.github.moxy-community", name = "moxy", version.ref = "moxy" }
+moxy-complier = { group = "com.github.moxy-community", name = "moxy-compiler", version.ref = "moxy" }
+moxy-android = { group = "com.github.moxy-community", name = "moxy-androidx", version.ref = "moxy" }
+
+# Annotations
+androidx-annotations = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin"}
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }

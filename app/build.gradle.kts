@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
+    id("kotlin-kapt")
 }
 
 android {
@@ -46,8 +47,11 @@ android {
 
 dependencies {
 
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
+    implementation(project(":core"))
+    implementation(project(":core:database"))
     implementation(project(":features-mobile:features-headlines"))
+    implementation(project(":features-mobile"))
     implementation(project(":core:utils"))
     implementation(project(":features-mobile:features-common"))
     implementation(project(":features-mobile:palette"))
@@ -69,7 +73,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+//    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.lifecycle.runtime)
 
     //Fragment manager
@@ -78,7 +82,7 @@ dependencies {
 
     //Moxy for MVP
     implementation (libs.moxy.core)
-    ksp (libs.moxy.complier)
+    kapt (libs.moxy.complier)
     implementation (libs.moxy.android)
 
     //Dagger2

@@ -25,5 +25,9 @@ interface CommonModule {
         fun provideNewsHeadlinesDao(application: Application): NewsHeadlinesDao {
             return AppDatabase.getInstance(application).newsHeadlinesDao()
         }
+
+//        @ApplicationScope
+//        @Provides
+//        fun providePageSource()
     }
 }

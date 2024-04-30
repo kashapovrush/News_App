@@ -41,7 +41,7 @@ android {
 
 dependencies {
 
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
     implementation(project(":core:utils"))
     implementation(project(":core:database"))
     implementation(project(":features-mobile:features-common"))

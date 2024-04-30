@@ -9,11 +9,9 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -26,9 +24,6 @@ import com.example.features_news_post.di.NewsPostComponentProvider
 import com.google.android.material.appbar.AppBarLayout
 import com.kashapovrush.api.modelsDto.NewsHeadlines
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
 import javax.inject.Inject
@@ -43,7 +38,6 @@ class NewsPostFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
-
 
 
     override fun onAttach(context: Context) {
@@ -69,7 +63,7 @@ class NewsPostFragment : Fragment() {
 
 
         viewModel.newsList.observe(viewLifecycleOwner) { it ->
-            it.forEach {news ->
+            it.forEach { news ->
                 if (post?.title == news.title) {
                     current = true
                     binding.btnAddToFavourite.setImageResource(R.drawable.ic_bookmark_enabled)
@@ -146,8 +140,8 @@ class NewsPostFragment : Fragment() {
     }
 
     private fun setSpannableText(post: NewsHeadlines?) {
-        val startSpannableText = post?.content?.lastIndexOf(".")?.plus(2)
-        val endSpannableText = post?.content?.length
+        val startSpannableText = post?.content?.lastIndexOf(".")?.plus(1) ?: 0
+        val endSpannableText = post?.content?.length ?: 0
 
         val spannableString = SpannableString(post?.content)
 
@@ -161,8 +155,8 @@ class NewsPostFragment : Fragment() {
 
         spannableString.setSpan(
             clickable,
-            startSpannableText ?: 0,
-            endSpannableText ?: 0,
+            startSpannableText,
+            endSpannableText,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
@@ -192,7 +186,7 @@ class NewsPostFragment : Fragment() {
 
         const val EXTRA_NEWS_HEADLINES = "news_headlines"
 
-        fun newInstance(newsPost: NewsHeadlines) = NewsPostFragment().apply {
+        fun newInstance(newsPost: NewsHeadlines?) = NewsPostFragment().apply {
             arguments = Bundle().apply {
                 putParcelable(EXTRA_NEWS_HEADLINES, newsPost)
             }

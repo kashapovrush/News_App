@@ -45,7 +45,7 @@ dependencies {
     implementation(project(":features-mobile:features-common"))
     implementation(project(":core:preferences"))
     implementation(project(":core:utils"))
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -53,7 +53,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+//    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     //Fragment manager
     implementation(libs.fragment.manager)
@@ -72,4 +72,6 @@ dependencies {
 
     //Swipe refresh layout
     implementation(libs.swipe.refresh.layout)
+
+    implementation(libs.jetpack.paging.common)
 }

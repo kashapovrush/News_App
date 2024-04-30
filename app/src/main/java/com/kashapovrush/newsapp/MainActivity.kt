@@ -1,10 +1,8 @@
 package com.kashapovrush.newsapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.error.ErrorFragment
 import com.example.features_common.constans.Constants.CURRENT_STATE
@@ -20,11 +18,11 @@ import com.example.features_search.ui.SearchHeadlinesFragment
 import com.example.features_source.ui.SourceNewsFragment
 import com.example.features_source.ui.SourcesFragment
 import com.example.features_splash_screen.SplashScreenFragment
-import com.example.features_splash_screen.SplashScreenFragment.Companion.ANIMATION_CONTINUES
 import com.example.features_splash_screen.SplashScreenFragment.Companion.ANIMATION_FINISHED
 import com.example.features_splash_screen.SplashScreenFragment.Companion.ANIMATION_STATE
 import com.example.features_splash_screen.SplashScreenFragment.Companion.EXTRA_DATA
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.headlines_features.presentation.ui.HeadlinesFragment
 import com.kashapovrush.headlines_features.presentation.ui.tabs.BusinessTab
 import com.kashapovrush.headlines_features.presentation.ui.tabs.GeneralTab
@@ -123,7 +121,7 @@ class MainActivity : AppCompatActivity(), HeadlinesFragment.OnClickListenerFromH
         }
     }
 
-    override fun clickListenerToNewsPost(post: NewsHeadlines) {
+    override fun clickListenerToNewsPost(post: NewsHeadlines?) {
         supportFragmentManager.commit {
             addToBackStack(null)
             replace(R.id.container_for_fragments, NewsPostFragment.newInstance(post))

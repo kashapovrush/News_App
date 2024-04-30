@@ -9,6 +9,7 @@ import java.time.LocalDate
 class LocalDateParcelable(val localDate: LocalDate): Parcelable {
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     constructor(parcel: Parcel) : this( LocalDate.parse(parcel.readString())) {
     }
 

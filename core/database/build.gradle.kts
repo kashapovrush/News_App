@@ -11,7 +11,7 @@ android {
     defaultConfig {
         minSdk = 24
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -39,7 +39,6 @@ dependencies {
     // Room database
     implementation (libs.room.core)
     ksp (libs.room.compiler)
-    implementation (libs.room.runtime)
 
     //RxJava 3
     implementation (libs.rxjava.core)

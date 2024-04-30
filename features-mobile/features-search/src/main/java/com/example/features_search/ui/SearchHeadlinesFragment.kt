@@ -1,23 +1,19 @@
 package com.example.features_search.ui
 
-import android.content.Context
-import android.net.ConnectivityManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.features_common.adapter.HeadlinesAdapter
-import com.example.features_common.state.ViewIntent
+import com.example.features_common.adapter.headlines.HeadlinesAdapter
 import com.example.features_common.viewmodel.CommonViewModel
 import com.example.features_search.databinding.FragmentSearchHeadlinesBinding
 import com.example.features_search.di.SearchHeadlinesComponentProvider
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import javax.inject.Inject
 
@@ -115,7 +111,7 @@ class SearchHeadlinesFragment : Fragment() {
 
     interface OnClickListenerFromSearchHeadlinesFragment {
 
-        fun clickListenerToNewsPost(post: NewsHeadlines)
+        fun clickListenerToNewsPost(post: NewsHeadlines?)
 
         fun fromSearchToHeadlines()
     }

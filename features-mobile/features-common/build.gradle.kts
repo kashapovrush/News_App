@@ -32,11 +32,16 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
 
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
     implementation(project(":core:utils"))
     implementation(project(":features-mobile:palette"))
     implementation(project(":core:database"))
@@ -78,5 +83,7 @@ dependencies {
     ksp (libs.room.compiler)
     implementation (libs.room.runtime)
     implementation (libs.room.rxjava)
+
+    implementation(libs.jetpack.paging.common)
 
 }

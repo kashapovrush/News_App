@@ -41,7 +41,7 @@ dependencies {
 
     implementation(project(":features-mobile:features-common"))
     implementation(project(":core:utils"))
-    implementation(project(":core:api"))
+    implementation(project(":core:network"))
     implementation(project(":features-mobile:palette"))
 
     implementation(libs.androidx.core.ktx)
@@ -63,4 +63,6 @@ dependencies {
 
     //Swipe refresh layout
     implementation(libs.swipe.refresh.layout)
+
+    implementation(libs.jetpack.paging.common)
 }

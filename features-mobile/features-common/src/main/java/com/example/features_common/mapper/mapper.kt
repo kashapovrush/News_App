@@ -4,6 +4,7 @@ import com.example.database.dbModel.NewsHeadlinesDb
 import com.kashapovrush.api.modelsDto.NewsHeadlines
 import com.kashapovrush.api.modelsDto.SourceDto
 
+
 fun NewsHeadlinesDb.toNewsHeadlines() = NewsHeadlines(
     title = title,
     description = description,
@@ -12,5 +13,4 @@ fun NewsHeadlinesDb.toNewsHeadlines() = NewsHeadlines(
     publishedAt = publishedAt,
     content = content,
     source = SourceDto(name = source)
-
 )

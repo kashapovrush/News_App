@@ -20,6 +20,7 @@ import com.example.features_source.databinding.FragmentSourcesBinding
 import com.example.features_source.di.SourceComponentProvider
 import com.example.prefrences.PreferencesManager
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

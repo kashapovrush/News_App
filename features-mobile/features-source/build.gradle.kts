@@ -46,6 +46,7 @@ dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:preferences"))
 
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -21,13 +21,16 @@ import com.example.features_search.di.SearchHeadlinesComponentProvider
 import com.example.features_source.di.DaggerSourceComponent
 import com.example.features_source.di.SourceComponent
 import com.example.features_source.di.SourceComponentProvider
+import com.example.features_splash_screen.di.DaggerSplashScreenComponent
+import com.example.features_splash_screen.di.SplashScreenComponent
+import com.example.features_splash_screen.di.SplashScreenComponentProvider
 import com.kashapovrush.headlines_features.di.DaggerHeadlinesComponent
 import com.kashapovrush.headlines_features.di.HeadlinesComponent
 import com.kashapovrush.headlines_features.di.HeadlinesComponentProvider
 
 class ApplicationNewsApp : Application(), HeadlinesComponentProvider, CommonComponentProvider,
     SearchHeadlinesComponentProvider, FilterNewsComponentProvider, NewsPostComponentProvider,
-    FavouriteComponentProvider, SourceComponentProvider {
+    FavouriteComponentProvider, SourceComponentProvider, SplashScreenComponentProvider {
 
     override fun getHeadlinesComponent(): HeadlinesComponent {
         return DaggerHeadlinesComponent.factory().create(this, this)
@@ -55,6 +58,11 @@ class ApplicationNewsApp : Application(), HeadlinesComponentProvider, CommonComp
 
     override fun getSourceComponent(): SourceComponent {
         return DaggerSourceComponent.factory().create(this, this)
+    }
+
+    override fun getSplashScreenComponent(): SplashScreenComponent {
+        return DaggerSplashScreenComponent.factory().create(this, this)
+
     }
 
 

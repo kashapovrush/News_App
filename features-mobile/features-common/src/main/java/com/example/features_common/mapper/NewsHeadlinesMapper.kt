@@ -5,7 +5,6 @@ import com.example.database.dbModel.SourceDb
 import com.example.features_common.models.Source
 import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.api.modelsDto.SourceDto
-
 import javax.inject.Inject
 
 class NewsHeadlinesMapper @Inject constructor() {

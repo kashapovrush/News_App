@@ -1,16 +1,54 @@
-package com.example.features_splash_screen
+package com.example.features_splash_screen.ui
 
 import android.animation.Animator
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.airbnb.lottie.LottieAnimationView
+import com.example.features_common.constans.Constants.EXTRA_CURRENT_TIME
+import com.example.features_common.viewmodel.SourcesViewModel
+import com.example.features_splash_screen.R
+import com.example.features_splash_screen.di.SplashScreenComponentProvider
+import com.example.prefrences.PreferencesManager
+import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class SplashScreenFragment : Fragment() {
+
+    private lateinit var viewModel: SourcesViewModel
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    @Inject
+    lateinit var preferencesManager: PreferencesManager
+
+    override fun onAttach(context: Context) {
+        (requireActivity().application as SplashScreenComponentProvider).getSplashScreenComponent()
+            .inject(this)
+        super.onAttach(context)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        viewModel = ViewModelProvider(this, viewModelFactory)[SourcesViewModel::class.java]
+
+        val time = preferencesManager.getLong(EXTRA_CURRENT_TIME)
+
+        if (time != 0L && System.currentTimeMillis() - time > 60000) {
+            lifecycleScope.launch {
+                viewModel.clearCached()
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

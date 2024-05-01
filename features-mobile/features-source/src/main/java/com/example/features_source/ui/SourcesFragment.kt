@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.features_common.adapter.headlines.SourcesAdapter
 import com.example.features_common.constans.Constants.CURRENT_STATE
+import com.example.features_common.constans.Constants.EXTRA_CURRENT_TIME
 import com.example.features_common.constans.Constants.EXTRA_SOURCE_STATE
 import com.example.features_common.constans.Constants.NAVIGATION_STATE
 import com.example.features_common.viewmodel.SourcesViewModel
@@ -46,13 +47,13 @@ class SourcesFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this, viewModelFactory)[SourcesViewModel::class.java]
-        val time = preferences.getLong(EXTRA_CURRENT_TIME)
-
-        if (time != 0L && System.currentTimeMillis() - time > 60000) {
-            lifecycleScope.launch {
-                viewModel.clearCached()
-            }
-        }
+//        val time = preferences.getLong(EXTRA_CURRENT_TIME)
+//
+//        if (time != 0L && System.currentTimeMillis() - time > 60000) {
+//            lifecycleScope.launch {
+//                viewModel.clearCached()
+//            }
+//        }
     }
 
 
@@ -132,7 +133,7 @@ class SourcesFragment : Fragment() {
 
     companion object {
 
-        const val EXTRA_CURRENT_TIME = "current_time"
+
         fun newInstance() = SourcesFragment()
     }
 }

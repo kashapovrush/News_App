@@ -7,4 +7,6 @@ object Constants {
     const val EXTRA_HEADLINES_STATE = 1
     const val EXTRA_FAVOURITE_STATE = 2
     const val EXTRA_SOURCE_STATE = 3
+
+    const val EXTRA_CURRENT_TIME = "current_time"
 }

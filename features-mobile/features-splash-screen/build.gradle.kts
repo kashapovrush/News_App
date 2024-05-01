@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -39,6 +40,11 @@ android {
 dependencies {
 
     implementation(project(":features-mobile:palette"))
+    implementation(project(":features-mobile:features-common"))
+    implementation(project(":core:utils"))
+    implementation(project(":core:preferences"))
+    implementation(project(":core:database"))
+    implementation(project(":core:network"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -48,4 +54,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation (libs.lottie)
+
+    //Dagger2
+    implementation (libs.dagger.core)
+    ksp (libs.dagger.compiler)
+
+    implementation(libs.jetpack.paging.common)
 }

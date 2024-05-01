@@ -12,5 +12,4 @@ fun NewsHeadlinesDb.toNewsHeadlines() = NewsHeadlines(
     publishedAt = publishedAt,
     content = content,
     source = SourceDto(name = source)
-
 )

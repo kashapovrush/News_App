@@ -62,6 +62,7 @@ class ApplicationNewsApp : Application(), HeadlinesComponentProvider, CommonComp
 
     override fun getSplashScreenComponent(): SplashScreenComponent {
         return DaggerSplashScreenComponent.factory().create(this, this)
+
     }
 
 

@@ -17,11 +17,14 @@ import com.example.features_news_post.ui.NewsPostFragment
 import com.example.features_search.ui.SearchHeadlinesFragment
 import com.example.features_source.ui.SourceNewsFragment
 import com.example.features_source.ui.SourcesFragment
+
 import com.example.features_splash_screen.ui.SplashScreenFragment
 import com.example.features_splash_screen.ui.SplashScreenFragment.Companion.ANIMATION_FINISHED
 import com.example.features_splash_screen.ui.SplashScreenFragment.Companion.ANIMATION_STATE
 import com.example.features_splash_screen.ui.SplashScreenFragment.Companion.EXTRA_DATA
+
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.headlines_features.presentation.ui.HeadlinesFragment
 import com.kashapovrush.headlines_features.presentation.ui.tabs.BusinessTab
 import com.kashapovrush.headlines_features.presentation.ui.tabs.GeneralTab

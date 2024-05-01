@@ -21,6 +21,7 @@ import com.example.features_source.databinding.FragmentSourcesBinding
 import com.example.features_source.di.SourceComponentProvider
 import com.example.prefrences.PreferencesManager
 import com.kashapovrush.api.modelsDto.NewsHeadlines
+import com.kashapovrush.api.modelsDto.NewsHeadlinesDto
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -47,13 +48,14 @@ class SourcesFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this, viewModelFactory)[SourcesViewModel::class.java]
-//        val time = preferences.getLong(EXTRA_CURRENT_TIME)
-//
-//        if (time != 0L && System.currentTimeMillis() - time > 60000) {
-//            lifecycleScope.launch {
-//                viewModel.clearCached()
-//            }
-//        }
+
+        val time = preferences.getLong(EXTRA_CURRENT_TIME)
+
+        if (time != 0L && System.currentTimeMillis() - time > 60000) {
+            lifecycleScope.launch {
+                viewModel.clearCached()
+            }
+        }
     }
 
 
@@ -132,7 +134,6 @@ class SourcesFragment : Fragment() {
     }
 
     companion object {
-
 
         fun newInstance() = SourcesFragment()
     }

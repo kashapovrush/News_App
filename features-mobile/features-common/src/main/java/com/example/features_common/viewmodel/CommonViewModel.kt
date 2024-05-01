@@ -78,7 +78,6 @@ class CommonViewModel @Inject constructor(
         }.stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
 
 
-
     suspend fun getSourceNews(sources: String) = flow {
         _loadingHeadlines.postValue(true)
         emit(apiService.getSourceNews(sources, "5e9ef018060345fc864ba15895a7956f"))

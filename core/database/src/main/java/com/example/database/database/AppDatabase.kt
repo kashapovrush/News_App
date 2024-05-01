@@ -13,6 +13,7 @@ import com.example.database.dbModel.NewsHeadlinesDb
 import com.example.database.dbModel.SourceDb
 
 @Database(entities = [NewsHeadlinesDb::class, SourceDb::class], version = 3, exportSchema = false)
+
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun newsHeadlinesDao(): NewsHeadlinesDao

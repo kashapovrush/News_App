@@ -2,10 +2,8 @@ package com.kashapovrush.api.network
 
 import androidx.annotation.IntRange
 import com.kashapovrush.api.modelsDto.NewsApiResponse
-import com.kashapovrush.api.modelsDto.Source
 import com.kashapovrush.api.modelsDto.Sources
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -43,7 +43,8 @@ dependencies {
     implementation(project(":features-mobile:features-common"))
     implementation(project(":core:utils"))
     implementation(project(":core:network"))
-
+    implementation(project(":core:database"))
+    implementation(project(":core:preferences"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

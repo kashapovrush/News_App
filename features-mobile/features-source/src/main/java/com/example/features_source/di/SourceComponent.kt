@@ -1,6 +1,7 @@
 package com.example.features_source.di
 
 import android.app.Application
+import android.content.Context
 import com.example.features_source.ui.SourceNewsFragment
 import com.example.features_source.ui.SourcesFragment
 import com.kashapovrush.utils.ApplicationScope.ApplicationScope
@@ -17,6 +18,6 @@ interface SourceComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance application: Application): SourceComponent
+        fun create(@BindsInstance application: Application, @BindsInstance context: Context): SourceComponent
     }
 }

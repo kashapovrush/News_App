@@ -37,7 +37,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Room database
-    implementation (libs.room.core)
+    api (libs.room.core)
     ksp (libs.room.compiler)
 
     //RxJava 3

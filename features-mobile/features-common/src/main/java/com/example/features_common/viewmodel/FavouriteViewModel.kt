@@ -34,6 +34,13 @@ class FavouriteViewModel @Inject constructor(
     }.asLiveData()
 
 
+    fun clearCached(){
+        viewModelScope.launch {
+            newsPostDao.clearList()
+        }
+
+    }
+
     fun addNewsPost(post: NewsHeadlinesDb) {
         viewModelScope.launch {
             newsPostDao.addNewsPost(post)

@@ -58,31 +58,6 @@ class CommonViewModel @Inject constructor(
     }
 
 
-//    suspend fun filteredNews(language: String, from: String, to: String, sortBy: String) = flow {
-//        _viewState.postValue(ViewState.Loading)
-//        emit(
-//            apiService.filteredNews(
-//                query = "news",
-//                language = language,
-//                from = from,
-//                to = to,
-//                sortBy = sortBy,
-//                apiKey = "6e56239f10864bf189382ae97b6093dd"
-//            )
-//        )
-//    }.catch {
-//        _viewState.postValue(
-//            it.message?.let { error ->
-//                ViewState.Error(error)
-//            }
-//        )
-//        _showError.value = it.message
-//    }.collect {
-//        viewModelScope.launch {
-//            _viewState.value = ViewState.Success(it.articles)
-//        }
-//    }
-
     fun filteredNews(
         language: String,
         from: String,
@@ -102,27 +77,7 @@ class CommonViewModel @Inject constructor(
             _showError.postValue(it.message)
         }.stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
 
-//    fun requestIntent(
-//        intent: ViewIntent,
-//        language: String,
-//        from: String,
-//        to: String,
-//        sortBy: String
-//    ) {
-//        when (intent) {
-//            is ViewIntent.RequestData -> {
-//                viewModelScope.launch {
-//                    filteredNews(language, from, to, sortBy)
-//                }
-//            }
-//
-//            is ViewIntent.UpdateList -> {
-//                viewModelScope.launch {
-//                    filteredNews(language, from, to, sortBy)
-//                }
-//            }
-//        }
-//    }
+
 
     suspend fun getSourceNews(sources: String) = flow {
         _loadingHeadlines.postValue(true)

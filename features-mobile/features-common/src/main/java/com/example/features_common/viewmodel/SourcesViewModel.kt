@@ -1,6 +1,5 @@
 package com.example.features_common.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.database.dao.SourcesDao
 import com.example.features_common.mapper.NewsHeadlinesMapper
 import com.example.features_common.models.Source
-import com.example.prefrences.PreferencesManager
 import com.kashapovrush.api.network.ApiService
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.filter
@@ -16,7 +14,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SourcesViewModel @Inject constructor(

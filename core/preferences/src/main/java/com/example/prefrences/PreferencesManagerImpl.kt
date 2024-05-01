@@ -20,6 +20,16 @@ class PreferencesManagerImpl @Inject constructor(private val context: Context): 
         return getPreferences().getString(key, null)
     }
 
+    override fun putLong(key: String, value: Long) {
+        val editor = getPreferences().edit()
+        editor.putLong(key, value)
+        editor.apply()
+    }
+
+    override fun getLong(key: String): Long {
+        return getPreferences().getLong(key, 0)
+    }
+
     companion object {
 
         const val EXTRA_PREFERENCES = "preferences"

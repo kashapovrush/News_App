@@ -27,7 +27,7 @@ interface NewsHeadlinesDao {
     fun addCache (post: NewsHeadlinesDb): Completable
 
     @Query("DELETE FROM newsposts")
-    fun clearList(): Completable
+    suspend fun clearList()
 
 
 }

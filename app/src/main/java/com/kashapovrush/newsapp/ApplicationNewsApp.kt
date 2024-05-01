@@ -54,7 +54,7 @@ class ApplicationNewsApp : Application(), HeadlinesComponentProvider, CommonComp
     }
 
     override fun getSourceComponent(): SourceComponent {
-        return DaggerSourceComponent.factory().create(this)
+        return DaggerSourceComponent.factory().create(this, this)
     }
 
 

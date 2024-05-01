@@ -53,6 +53,7 @@ class FavouriteFragment : Fragment() {
 
         viewModel = ViewModelProvider(this, viewModelFactory)[FavouriteViewModel::class.java]
 
+
         listAdapter = HeadlinesAdapter(requireContext(), object : HeadlinesAdapter.OnClickListenerHeadlinesAdapter{
             override fun onClick(post: NewsHeadlines) {
                 (requireActivity() as ClickListenerFromFavourite).clickListenerToNewsPost(post)

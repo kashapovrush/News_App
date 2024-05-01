@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.features_common.R
-import com.kashapovrush.api.modelsDto.Source
+import com.example.features_common.models.Source
+import com.kashapovrush.api.modelsDto.SourceDto
 import java.util.Locale
 
 class SourcesAdapter(val context: Context) : ListAdapter<Source, SourceViewHolder>(

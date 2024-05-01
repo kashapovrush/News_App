@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class NewsHeadlinesDto(
     @SerializedName("source")
-    val source: Source,
+    val source: SourceDto,
     @SerializedName("title")
     val title: String? = "",
     @SerializedName("description")

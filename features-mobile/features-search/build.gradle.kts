@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    implementation(project(":features-mobile:features-common"))
+    implementation(project(":features-mobile:features-repository"))
     implementation(project(":core:utils"))
     implementation(project(":core:network"))
     implementation(project(":features-mobile:palette"))

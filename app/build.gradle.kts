@@ -53,7 +53,7 @@ dependencies {
     implementation(project(":features-mobile:features-headlines"))
     implementation(project(":features-mobile"))
     implementation(project(":core:utils"))
-    implementation(project(":features-mobile:features-common"))
+    implementation(project(":features-mobile:features-repository"))
     implementation(project(":features-mobile:palette"))
     implementation(project(":features-mobile:features-filter-news"))
     implementation(project(":features-mobile:features-search"))

@@ -44,7 +44,7 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:utils"))
     implementation(project(":core:database"))
-    implementation(project(":features-mobile:features-common"))
+    implementation(project(":features-mobile:features-repository"))
     implementation(project(":features-mobile:palette"))
 
     implementation(libs.androidx.core.ktx)

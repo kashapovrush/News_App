@@ -81,9 +81,6 @@ class SourcesFragment : Fragment() {
             sourcesAdapter.submitList(it)
         }
 
-
-        Log.d("MainActivityTest", "${preferences.getLong(EXTRA_CURRENT_TIME)}")
-
         viewModel.loadingHeadlines.observe(viewLifecycleOwner) { isLoading ->
             if (isLoading) {
                 binding.sourcesBar.visibility = View.VISIBLE

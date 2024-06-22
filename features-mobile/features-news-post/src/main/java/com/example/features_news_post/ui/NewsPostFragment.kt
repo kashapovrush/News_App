@@ -115,7 +115,7 @@ class NewsPostFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            requireActivity().onBackPressed()
+            parentFragmentManager.popBackStack()
         }
 
     }

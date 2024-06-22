@@ -15,6 +15,7 @@ import com.example.features_filter_news.ui.FilterNewsFragment
 import com.example.features_filter_news.ui.FilteredNewsFragment
 import com.example.features_news_post.ui.NewsPostFragment
 import com.example.features_search.ui.SearchHeadlinesFragment
+import com.example.features_source.ui.MainSourceFragment
 import com.example.features_source.ui.SourceNewsFragment
 import com.example.features_source.ui.SourcesFragment
 import com.example.features_splash_screen.ui.SplashScreenFragment
@@ -31,7 +32,8 @@ class MainActivity : AppCompatActivity(), HeadlinesFragment.OnClickListenerFromH
     SearchHeadlinesFragment.OnClickListenerFromSearchHeadlinesFragment,
     FilterNewsFragment.OnClickListenerFromFilterNews,
     FilteredNewsFragment.ClickListenerFromFilteredNews, BusinessTab.ClickListener,
-    FavouriteFragment.ClickListenerFromFavourite, SourcesFragment.ClickListenerFromSourcesFragment,
+    FavouriteFragment.ClickListenerFromFavourite, SourceNewsFragment.ClickListenerFromSourceNews,
+    MainSourceFragment.ClickListenerFromMainSources,
     GeneralTab.ClickListenerFromHeadlines, ErrorFragment.ClickListenerFromError {
 
     private lateinit var binding: ActivityMainBinding
@@ -100,7 +102,7 @@ class MainActivity : AppCompatActivity(), HeadlinesFragment.OnClickListenerFromH
             supportFragmentManager.popBackStack()
             supportFragmentManager.commit {
                 addToBackStack(null)
-                replace(R.id.container_for_fragments, SourcesFragment.newInstance())
+                replace(R.id.container_for_fragments, MainSourceFragment.newInstance())
             }
         }
     }
@@ -192,13 +194,6 @@ class MainActivity : AppCompatActivity(), HeadlinesFragment.OnClickListenerFromH
             layoutHeadlines.visibility = View.VISIBLE
             layoutSources.visibility = View.VISIBLE
             layoutFavourite.visibility = View.VISIBLE
-        }
-    }
-
-    override fun clickListenerToSourceNews(source: String?) {
-        supportFragmentManager.commit {
-            addToBackStack(null)
-            replace(R.id.container_for_fragments, SourceNewsFragment.newInstance(source ?: ""))
         }
     }
 

@@ -14,7 +14,7 @@ class SourcesAdapter(val context: Context) : ListAdapter<Source, SourceViewHolde
     DiffUtilSourceCallback()
 ) {
 
-    var onCLickListenerItem: ((Source) -> Unit)? = null
+    var onCLickListenerItem: ((String) -> Unit)? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SourceViewHolder {
@@ -47,12 +47,12 @@ class SourcesAdapter(val context: Context) : ListAdapter<Source, SourceViewHolde
             holder.imageSource.setImageResource(0)
         }
 
-        val country = item.country?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
-        val category = item.category?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+        val country = item.country.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+        val category = item.category.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
         holder.aboutSource.text = "$category | $country"
 
         holder.view.setOnClickListener {
-            onCLickListenerItem?.invoke(item)
+            onCLickListenerItem?.invoke(item.name)
         }
 
     }

@@ -57,5 +57,8 @@ dependencies {
     implementation (libs.dagger.core)
     ksp (libs.dagger.compiler)
 
+    //Fragment manager
+    implementation(libs.fragment.manager)
+
     implementation(libs.jetpack.paging.common)
 }

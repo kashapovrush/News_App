@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +21,6 @@ import com.example.features_common.viewmodel.SourcesViewModel
 import com.example.features_source.databinding.FragmentSourcesBinding
 import com.example.features_source.di.SourceComponentProvider
 import com.example.prefrences.PreferencesManager
-import com.kashapovrush.api.modelsDto.NewsHeadlines
 import com.kashapovrush.utils.viewModelFactory.ViewModelFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -47,13 +47,7 @@ class SourcesFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this, viewModelFactory)[SourcesViewModel::class.java]
-//        val time = preferences.getLong(EXTRA_CURRENT_TIME)
-//
-//        if (time != 0L && System.currentTimeMillis() - time > 60000) {
-//            lifecycleScope.launch {
-//                viewModel.clearCached()
-//            }
-//        }
+
     }
 
 
@@ -67,9 +61,9 @@ class SourcesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setRecyclerView()
-
+//        fragmentManager?.saveBackStack(TAG)
+        savedInstanceState?.putString("frag", TAG)
         lifecycleScope.launch {
 
             viewModel.cachedSources.collectLatest {
@@ -89,16 +83,8 @@ class SourcesFragment : Fragment() {
             }
         }
 
-        sourcesAdapter.onCLickListenerItem = {
-            (requireActivity() as ClickListenerFromSourcesFragment).clickListenerToSourceNews(it.name)
-        }
-
-        binding.btnStartSearch.setOnClickListener {
-            (requireActivity() as ClickListenerFromSourcesFragment).clickListenerToSearch()
-        }
-
-        binding.btnStartFilter.setOnClickListener {
-            (requireActivity() as ClickListenerFromSourcesFragment).clickListenerToFilter()
+        sourcesAdapter.onCLickListenerItem = {source ->
+            (parentFragment as ClickListenerFromSourcesFragment).clickListenerToSourceNews(source)
         }
 
         requireActivity().supportFragmentManager.setFragmentResult(
@@ -106,7 +92,6 @@ class SourcesFragment : Fragment() {
             bundleOf(CURRENT_STATE to EXTRA_SOURCE_STATE)
         )
     }
-
 
     private fun setRecyclerView() {
         sourcesAdapter = SourcesAdapter(requireContext())
@@ -117,19 +102,21 @@ class SourcesFragment : Fragment() {
 
     }
 
+
     interface ClickListenerFromSourcesFragment {
 
         fun clickListenerToSourceNews(source: String?)
 
-        fun clickListenerToFilter()
 
-        fun clickListenerToSearch()
-
-        fun clickListenerToNewsPost(post: NewsHeadlines?)
     }
 
     companion object {
 
+        const val STATE_SCREEN_IN_SOURCE = "screen_in_source"
+        const val STATE_SOURCES_FRAGMENT = "sources_fragment"
+        const val SOURCES_FRAGMENT = 0
+
+        const val TAG = "SourcesFragment"
 
         fun newInstance() = SourcesFragment()
     }
